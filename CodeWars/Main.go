@@ -7,7 +7,7 @@ func main() {
 	res := Multiple3And5(10)
 
 	fmt.Println(res)
-	fmt.Println("test")
+	fmt.Println("test input")
 
 }
 
