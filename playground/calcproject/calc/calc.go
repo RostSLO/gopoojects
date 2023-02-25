@@ -1,10 +1,12 @@
 package calc
 
-// func executeOperation(op Calcer) {
-func ExecuteOperation(x int, y int) int {
+import "fmt"
 
-	return x + y
-	//fmt.Println(op.Calc())
+func ExecuteOperation(op Calcer) {
+	//func ExecuteOperation(x int, y int) int {
+
+	//return x + y
+	fmt.Println(op.Calc())
 
 }
 
