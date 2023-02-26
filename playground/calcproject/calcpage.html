@@ -1,0 +1,24 @@
+<h1>Editing {{.Title}}</h1>
+
+<form action="/save/" method="POST">
+<p>Enter value 1:</p>
+
+<div><input type="text" name="val1" rows="1" cols="20" value={{.Val1}}></div>
+
+<div><p><label for="op">Select operation:</label></p>
+<select id="op" name="op">
+  <option value="+">+</option>
+  <option value="-">-</option>
+  <option value="*">*</option>
+  <option value="/">/</option>
+</select></div>
+
+<p>Enter value 2:</p>
+<div><input type="text" name="val2" rows="1" cols="20" value={{.Val2}}></div>
+<p>Result:</p>
+<div><h1>{{.Result}}</h1></div>
+<div><input type="submit" value="Save"></div>
+</form>
+<form action="/hijack/" method="POST">
+    <div><input type="submit" value="Close"></div>
+</form>

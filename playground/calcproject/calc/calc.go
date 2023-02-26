@@ -1,12 +1,10 @@
 package calc
 
-import "fmt"
+//import "fmt"
 
-func ExecuteOperation(op Calcer) {
-	//func ExecuteOperation(x int, y int) int {
+func ExecuteOperation(op Calcer) float32 {
 
-	//return x + y
-	fmt.Println(op.Calc())
+	return op.Calc()
 
 }
 
@@ -16,14 +14,32 @@ type Calcer interface {
 
 type Addition [2]float32
 
-//type Substraction float32
+type Substraction [2]float32
 
-//type Multiplication float32
+type Multiplication [2]float32
 
-//type Division float32
+type Division [2]float32
 
 func (ad *Addition) Calc() float32 {
 
 	return (*ad)[0] + (*ad)[1]
+
+}
+
+func (ad *Substraction) Calc() float32 {
+
+	return (*ad)[0] - (*ad)[1]
+
+}
+
+func (ad *Multiplication) Calc() float32 {
+
+	return (*ad)[0] * (*ad)[1]
+
+}
+
+func (ad *Division) Calc() float32 {
+
+	return (*ad)[0] / (*ad)[1]
 
 }
