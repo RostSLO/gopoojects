@@ -1,15 +1,56 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func main() {
 
-	res := Multiple3And5(10)
+	//slc := "Welcome"
+	//slc := "to"
+	//slc := "CodeWars"
+	slc := "Hey fellow warriors"
+	res := SpinWords(slc)
 
 	fmt.Println(res)
-	fmt.Println("test input")
 
 }
+
+func SpinWords(str string) string {
+
+	strSlc := strings.Split(str, " ")
+	res := ""
+	var revertWord []byte
+	for _, x := range strSlc {
+		if len(x) >= 5 {
+			for i := len(x) - 1; i >= 0; i-- {
+				revertWord = append(revertWord, x[i])
+			}
+			res += string(revertWord) + " "
+			revertWord = nil
+		} else {
+			res += x + " "
+		}
+	}
+	return res[:len(res)-1]
+} // SpinWords
+
+/*
+func FindOdd(seq []int) int {
+	dict := make(map[int]int)
+	for _, num := range seq {
+		dict[num] = dict[num] + 1
+	}
+	fmt.Println(dict)
+	for k, v := range dict {
+		if v%2 != 0 {
+			return k
+		}
+	}
+	return 0
+}
+
 
 func Multiple3And5(number int) int {
 	var sum int = 0
@@ -29,3 +70,4 @@ func Multiple3And5(number int) int {
 	return sum
 
 }
+*/
