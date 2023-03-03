@@ -2,21 +2,40 @@ package main
 
 import (
 	"fmt"
-	"strings"
 )
 
 func main() {
 
-	slc := [10]uint{1, 2, 3, 4, 5, 6, 7, 8, 9, 0}
-	//slc := 992
-	//slc := 195
-	//slc := 16
-	res := CreatePhoneNumber(slc)
+	testData := 4
+	//testData := 1675030927
+	//testData := 195
+	//testData := 16
+	res := IsPrime(testData)
 
 	fmt.Println(res)
 
 }
 
+func IsPrime(n int) bool {
+
+	if n <= 1 {
+		return false
+	}
+
+	if n == 2 || n == 3 || n == 5 || n == 7 {
+		return true
+	}
+
+	for j := 2; j*j <= n; j++ {
+		if n%j == 0 {
+			return false
+		}
+	}
+
+	return true
+}
+
+/*
 func CreatePhoneNumber(numbers [10]uint) string {
 
 	var res string = strings.Trim(strings.Join(strings.Fields(fmt.Sprint(numbers)), ""), "[]")
@@ -24,7 +43,7 @@ func CreatePhoneNumber(numbers [10]uint) string {
 	return "(" + res[:3] + ") " + res[3:6] + "-" + res[6:]
 }
 
-/*
+
 func DigitalRoot(n int) int {
 
 	if n <= 9 {
