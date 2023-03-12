@@ -6,16 +6,35 @@ import (
 
 func main() {
 
-	testData := 11
-	//testData := 1675030927
+	//testData := "abc"
+	testData := "dawsd"
 	//testData := 195
 	//testData := 16
-	res := IsPrime(testData)
+	res := Solution(testData)
 
 	fmt.Println(res)
 
 }
 
+func Solution(str string) []string {
+	var res []string
+
+	if str == "" {
+		return []string{}
+	} else if len(str)%2 != 0 {
+		str += "_"
+	}
+
+	for x := 0; x < len(str); x++ {
+		res = append(res, string(str[x])+string(str[x+1]))
+		x += 1
+	}
+
+	return res
+
+}
+
+/*
 func IsPrime(n int) bool {
 
 	if n <= 1 {
@@ -35,7 +54,7 @@ func IsPrime(n int) bool {
 	return true
 }
 
-/*
+
 func CreatePhoneNumber(numbers [10]uint) string {
 
 	var res string = strings.Trim(strings.Join(strings.Fields(fmt.Sprint(numbers)), ""), "[]")
