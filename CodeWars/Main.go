@@ -6,17 +6,48 @@ import (
 
 func main() {
 
-	//testData := "abc"
-	testData := "dawsd"
+	//testData := "The_stealth_warrior"
+	//testData := "the-Stealth-Warrior"
 	//testData := 195
 	//testData := 16
-	res := Solution(testData)
+	n := 46288
+	p := 3
+	res := DigPow(n, p)
 
 	fmt.Println(res)
 
 }
 
-func Solution(str string) []string {
+/*
+func DigPow(n, p int) int {
+
+	var res int = 0
+	var power int = p
+	str := strconv.Itoa(n)
+
+	for i, digit := range str {
+		// convert string to digit
+		value, _ := strconv.Atoi(string(digit))
+		res += int(math.Pow(float64(value), float64(power+i)))
+	}
+
+	if res%n == 0 {
+		return res / n
+	} else {
+		return -1
+	}
+}
+
+func ToCamelCase(s string) string {
+	re, _ := regexp.Compile(`[-_]\w`)
+	res := re.ReplaceAllStringFunc(s, func(m string) string {
+		return strings.ToUpper(m[1:])
+	})
+	return res
+}
+
+
+func Solution(str string) [5]string {
 	var res []string
 
 	if str == "" {
@@ -34,7 +65,7 @@ func Solution(str string) []string {
 
 }
 
-/*
+
 func IsPrime(n int) bool {
 
 	if n <= 1 {
